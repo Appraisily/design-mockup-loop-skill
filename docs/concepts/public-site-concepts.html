@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unofficial Public Site Concepts</title>
+  <style>
+    :root {
+      --ink: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --panel: #ffffff;
+      --soft: #f8fafc;
+      --blue: #2563eb;
+      --violet: #635bff;
+      --green: #087f5b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--soft);
+    }
+
+    .screen {
+      width: 1440px;
+      height: 900px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0 48px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .nav {
+      display: flex;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-weight: 800;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .button.light {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .watermark {
+      position: absolute;
+      right: 32px;
+      bottom: 24px;
+      color: rgba(16, 24, 40, 0.42);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .google {
+      position: relative;
+      display: grid;
+      grid-template-rows: 72px 1fr;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(66, 133, 244, 0.12), transparent 30%),
+        radial-gradient(circle at 76% 24%, rgba(251, 188, 5, 0.13), transparent 28%),
+        radial-gradient(circle at 70% 82%, rgba(52, 168, 83, 0.13), transparent 30%),
+        #fff;
+    }
+
+    .google .hero {
+      display: grid;
+      place-items: center;
+      padding: 70px 32px 96px;
+    }
+
+    .search-panel {
+      width: min(860px, 100%);
+      text-align: center;
+    }
+
+    .search-mark {
+      display: inline-grid;
+      grid-template-columns: repeat(6, auto);
+      gap: 3px;
+      margin-bottom: 28px;
+      font-size: 72px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .search-mark span:nth-child(1),
+    .search-mark span:nth-child(4) { color: #4285f4; }
+    .search-mark span:nth-child(2),
+    .search-mark span:nth-child(6) { color: #ea4335; }
+    .search-mark span:nth-child(3) { color: #fbbc05; }
+    .search-mark span:nth-child(5) { color: #34a853; }
+
+    .search-box {
+      display: grid;
+      grid-template-columns: 28px 1fr auto auto;
+      align-items: center;
+      gap: 14px;
+      min-height: 70px;
+      padding: 0 22px;
+      border: 1px solid #dfe5ef;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 18px 48px rgba(16, 24, 40, 0.12);
+      text-align: left;
+    }
+
+    .search-box strong {
+      color: #344054;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .quick-lanes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .lane {
+      min-height: 118px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.78);
+      text-align: left;
+    }
+
+    .lane b {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .lane span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .stripe {
+      position: relative;
+      background:
+        radial-gradient(circle at 78% 15%, rgba(255, 163, 26, 0.5), transparent 22%),
+        radial-gradient(circle at 90% 38%, rgba(236, 72, 153, 0.42), transparent 30%),
+        radial-gradient(circle at 78% 74%, rgba(99, 91, 255, 0.36), transparent 28%),
+        linear-gradient(135deg, #fff 0%, #f6f8ff 56%, #eef2ff 100%);
+    }
+
+    .stripe .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+      gap: 60px;
+      padding: 86px 96px 60px;
+      align-items: center;
+    }
+
+    .stripe h1,
+    .news h1 {
+      margin: 0;
+      font-size: 70px;
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .stripe p {
+      max-width: 620px;
+      color: #475467;
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .metric-card {
+      min-height: 118px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 24px 64px rgba(16, 24, 40, 0.14);
+      backdrop-filter: blur(14px);
+    }
+
+    .metric-card b {
+      display: block;
+      font-size: 34px;
+    }
+
+    .metric-card span {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .news {
+      position: relative;
+      background: #fbfaf7;
+    }
+
+    .news .topbar {
+      height: 86px;
+      border-bottom: 3px double #1d1d1b;
+      background: #fbfaf7;
+    }
+
+    .news .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: 900;
+    }
+
+    .news-layout {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr) 340px;
+      gap: 28px;
+      padding: 34px 72px;
+    }
+
+    .brief,
+    .lead,
+    .side {
+      border-top: 2px solid #1d1d1b;
+      padding-top: 18px;
+    }
+
+    .brief h3,
+    .side h3 {
+      margin: 0 0 14px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .brief-item,
+    .side-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #d8d2c7;
+    }
+
+    .brief-item b,
+    .side-item b {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .brief-item span,
+    .side-item span {
+      display: block;
+      margin-top: 8px;
+      color: #5d5a53;
+      line-height: 1.35;
+    }
+
+    .lead h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 54px;
+      line-height: 1.02;
+    }
+
+    .lead-visual {
+      height: 300px;
+      margin: 24px 0;
+      border-radius: 4px;
+      background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.04)),
+        repeating-linear-gradient(90deg, #8b9bb2 0 56px, #c8b299 56px 112px, #36465e 112px 168px);
+    }
+
+    .edition-strip {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .edition-strip span {
+      padding: 8px 12px;
+      border: 1px solid #d8d2c7;
+      border-radius: 999px;
+      color: #4f4a42;
+      font-size: 13px;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const site = new URLSearchParams(location.search).get('site') || 'google';
+    const app = document.getElementById('app');
+
+    const pages = {
+      google: `
+        <section class="screen google">
+          <nav class="topbar">
+            <div class="brand">Search Concept</div>
+            <div class="nav"><span>Images</span><span>Research</span><span>Maps</span><span>Apps</span></div>
+            <span class="pill">Sign in</span>
+          </nav>
+          <div class="hero">
+            <div class="search-panel">
+              <div class="search-mark" aria-hidden="true"><span>S</span><span>e</span><span>a</span><span>r</span><span>c</span><span>h</span></div>
+              <div class="search-box">
+                <span>⌕</span>
+                <strong>Ask, search, or compare sources</strong>
+                <span class="pill">Voice</span>
+                <span class="pill">Image</span>
+              </div>
+              <div class="quick-lanes">
+                <div class="lane"><b>Search</b><span>Classic web results with cleaner intent chips.</span></div>
+                <div class="lane"><b>Research</b><span>Source summaries and follow-up questions in one lane.</span></div>
+                <div class="lane"><b>Local</b><span>Nearby answers separated from general results.</span></div>
+                <div class="lane"><b>Saved</b><span>Recent searches and collections made visible.</span></div>
+              </div>
+            </div>
+          </div>
+          <span class="watermark">Unofficial concept mockup</span>
+        </section>
+      `,
+      stripe: `
+        <section class="screen stripe">
+          <nav class="topbar">
+            <div class="brand">Payments Concept</div>
+            <div class="nav"><span>Products</span><span>Use cases</span><span>Developers</span><span>Pricing</span></div>
+            <span class="pill">Contact sales</span>
+          </nav>
+          <div class="hero">
+            <div>
+              <span class="pill">Revenue platform</span>
+              <h1>One path from first payment to global finance.</h1>
+              <p>Group payments, billing, tax, fraud, and reporting around the business stage a visitor is actually in.</p>
+              <div class="hero-actions">
+                <span class="button">Start building</span>
+                <span class="button light">Compare products</span>
+              </div>
+            </div>
+            <div class="stack">
+              <div class="metric-card"><b>Checkout</b><span>Launch payments with platform defaults and guided setup.</span></div>
+              <div class="metric-card"><b>Scale</b><span>Subscriptions, tax, fraud, and global payment methods.</span></div>
+              <div class="metric-card"><b>Operate</b><span>Unified revenue reporting, disputes, and finance workflows.</span></div>
+            </div>
+          </div>
+          <span class="watermark">Unofficial concept mockup</span>
+        </section>
+      `,
+      news: `
+        <section class="screen news">
+          <nav class="topbar">
+            <div class="nav"><span>Menu</span><span>Search</span></div>
+            <div class="brand">Daily Brief Concept</div>
+            <span class="pill">Subscribe</span>
+          </nav>
+          <div class="news-layout">
+            <aside class="brief">
+              <h3>Morning Brief</h3>
+              <div class="brief-item"><b>Five stories to know now</b><span>Condensed context before the full homepage stream.</span></div>
+              <div class="brief-item"><b>Live updates</b><span>Developing stories grouped by recency and topic.</span></div>
+              <div class="brief-item"><b>Saved for later</b><span>A calmer path for return readers.</span></div>
+            </aside>
+            <main class="lead">
+              <h1>A clearer front page for scanning, depth, and return visits.</h1>
+              <div class="lead-visual" aria-hidden="true"></div>
+              <p>Top story, live context, and reader pathways are separated so the page feels editorial without becoming noisy.</p>
+              <div class="edition-strip"><span>U.S.</span><span>World</span><span>Business</span><span>Culture</span><span>Opinion</span></div>
+            </main>
+            <aside class="side">
+              <h3>Reader paths</h3>
+              <div class="side-item"><b>Follow this topic</b><span>Topic continuity for ongoing stories.</span></div>
+              <div class="side-item"><b>Listen now</b><span>Audio and briefings surfaced without crowding the lead.</span></div>
+              <div class="side-item"><b>Weekend reads</b><span>Evergreen editorial packages get a defined home.</span></div>
+            </aside>
+          </div>
+          <span class="watermark">Unofficial concept mockup</span>
+        </section>
+      `
+    };
+
+    app.innerHTML = pages[site] || pages.google;
+  </script>
+</body>
+</html>

@@ -8,6 +8,9 @@ and mobile GUI mockups.
 Interactive before/after demo:
 https://appraisily.github.io/design-mockup-loop-skill/
 
+The demo includes owned Appraisily examples plus unofficial public-website
+practice examples from live browser captures.
+
 The workflow is intentionally simple:
 
 1. Capture clean viewport screenshots of the current page.

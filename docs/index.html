@@ -103,6 +103,27 @@
       padding-top: 42px;
     }
 
+    .section-intro {
+      display: grid;
+      gap: 10px;
+      padding-top: 56px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-intro h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.98;
+    }
+
+    .section-intro p {
+      max-width: 780px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
     .example {
       display: grid;
       gap: 18px;
@@ -398,10 +419,71 @@
           <div class="note"><strong>Implementation scope</strong><span>Mobile stacking, spacing, image treatment, and sticky CTA behavior.</span></div>
         </div>
       </article>
+
+      <div class="section-intro">
+        <h2>Public website practice examples.</h2>
+        <p>
+          These are unofficial design-practice examples using screenshots from well-known public websites. The after side is a neutral concept mockup for demonstrating the loop, not an endorsed redesign or a production screen.
+        </p>
+      </div>
+
+      <article class="example">
+        <div class="example__header">
+          <div>
+            <h2>Google.com search homepage</h2>
+            <p>A homepage exercise focused on preserving a direct search moment while testing clearer secondary paths for research, local intent, and saved work.</p>
+          </div>
+          <span class="tag">Public URL</span>
+        </div>
+        <div class="compare" style="--ratio: 16 / 10;">
+          <img class="compare__after" src="assets/public-sites/google-after.png" alt="Unofficial after concept for a public search homepage">
+          <img class="compare__before" src="assets/public-sites/google-before.png" alt="Before screenshot of google.com">
+          <span class="compare__label before">Before</span>
+          <span class="compare__label after">After</span>
+          <span class="compare__handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after public search homepage concept">
+        </div>
+      </article>
+
+      <article class="example">
+        <div class="example__header">
+          <div>
+            <h2>Stripe.com landing hero</h2>
+            <p>A SaaS landing-page exercise that turns a broad product message into stage-based pathways for checkout, scaling, and revenue operations.</p>
+          </div>
+          <span class="tag">Public URL</span>
+        </div>
+        <div class="compare" style="--ratio: 16 / 10;">
+          <img class="compare__after" src="assets/public-sites/stripe-after.png" alt="Unofficial after concept for a public SaaS landing page">
+          <img class="compare__before" src="assets/public-sites/stripe-before.png" alt="Before screenshot of stripe.com">
+          <span class="compare__label before">Before</span>
+          <span class="compare__label after">After</span>
+          <span class="compare__handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after public SaaS landing page concept">
+        </div>
+      </article>
+
+      <article class="example">
+        <div class="example__header">
+          <div>
+            <h2>News homepage scan path</h2>
+            <p>An editorial homepage exercise that separates the lead story, morning brief, topic following, and return-reader paths.</p>
+          </div>
+          <span class="tag">Public URL</span>
+        </div>
+        <div class="compare" style="--ratio: 16 / 10;">
+          <img class="compare__after" src="assets/public-sites/nytimes-after.png" alt="Unofficial after concept for a public news homepage">
+          <img class="compare__before" src="assets/public-sites/nytimes-before.png" alt="Before screenshot of a public news homepage">
+          <span class="compare__label before">Before</span>
+          <span class="compare__label after">After</span>
+          <span class="compare__handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after public news homepage concept">
+        </div>
+      </article>
     </section>
 
     <footer>
-      This page is a static demo for the public Design Mockup Loop skill. The after images are mockup directions, not deployed production screens.
+      This page is a static demo for the public Design Mockup Loop skill. The after images are mockup directions, not deployed production screens. Public website examples are unofficial practice references and are not affiliated with or endorsed by the source sites.
     </footer>
   </main>
 
