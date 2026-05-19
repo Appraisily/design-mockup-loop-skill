@@ -5,6 +5,9 @@
 Portable Codex skill for turning live page screenshots into AI-generated desktop
 and mobile GUI mockups.
 
+Interactive before/after demo:
+https://appraisily.github.io/design-mockup-loop-skill/
+
 The workflow is intentionally simple:
 
 1. Capture clean viewport screenshots of the current page.

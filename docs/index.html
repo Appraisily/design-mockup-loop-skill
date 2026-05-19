@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Mockup Loop - Before / After Examples</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #071124;
+      --muted: #526079;
+      --line: #d9e0ec;
+      --soft: #f6f7f4;
+      --panel: #ffffff;
+      --accent: #007f68;
+      --accent-dark: #003f36;
+      --shadow: 0 20px 60px rgba(7, 17, 36, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--soft);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    header {
+      display: grid;
+      gap: 18px;
+      padding: 28px 0 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.55;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .examples {
+      display: grid;
+      gap: 42px;
+      padding-top: 42px;
+    }
+
+    .example {
+      display: grid;
+      gap: 18px;
+    }
+
+    .example__header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: end;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .example__header p {
+      margin: 8px 0 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border: 1px solid #b9ddd4;
+      border-radius: 999px;
+      background: #eaf8f4;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .compare {
+      --pos: 50%;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: var(--ratio);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #e8ecf3;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .compare.mobile {
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    .compare img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .compare__before {
+      z-index: 2;
+      clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+    }
+
+    .compare__label {
+      position: absolute;
+      top: 14px;
+      z-index: 5;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 999px;
+      background: rgba(7, 17, 36, 0.78);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .compare__label.before {
+      left: 14px;
+    }
+
+    .compare__label.after {
+      right: 14px;
+      background: rgba(0, 127, 104, 0.86);
+    }
+
+    .compare__handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--pos);
+      z-index: 4;
+      width: 3px;
+      transform: translateX(-50%);
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(7, 17, 36, 0.16), 0 0 24px rgba(7, 17, 36, 0.28);
+      pointer-events: none;
+    }
+
+    .compare__handle::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 42px;
+      height: 42px;
+      transform: translate(-50%, -50%);
+      border: 2px solid #fff;
+      border-radius: 999px;
+      background:
+        linear-gradient(90deg, transparent 13px, #fff 13px 15px, transparent 15px 27px, #fff 27px 29px, transparent 29px),
+        var(--ink);
+      box-shadow: 0 10px 30px rgba(7, 17, 36, 0.35);
+    }
+
+    .compare input[type="range"] {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      cursor: ew-resize;
+    }
+
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .note {
+      min-height: 88px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .note span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    footer {
+      margin-top: 54px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 24px 14px 48px;
+      }
+
+      header {
+        padding-top: 12px;
+      }
+
+      .example__header,
+      .notes {
+        grid-template-columns: 1fr;
+      }
+
+      .tag {
+        justify-self: start;
+      }
+
+      .compare {
+        border-radius: 6px;
+      }
+
+      .compare__label {
+        top: 10px;
+        font-size: 11px;
+      }
+
+      .compare__label.before {
+        left: 10px;
+      }
+
+      .compare__label.after {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Design Mockup Loop</p>
+      <h1>Before and after mockup examples.</h1>
+      <p class="intro">
+        These examples show the loop in action: capture a real page state, generate a stronger GUI direction, then compare the original and mockup with a draggable slider.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/Appraisily/design-mockup-loop-skill">View the skill</a>
+        <a class="button" href="https://github.com/Appraisily/design-mockup-loop-skill#example-use-cases">Read use cases</a>
+      </div>
+    </header>
+
+    <section class="examples" aria-label="Before and after examples">
+      <article class="example">
+        <div class="example__header">
+          <div>
+            <h2>Sample report section</h2>
+            <p>A section-level pass that makes the proof/report area more prominent and easier to evaluate before starting an appraisal.</p>
+          </div>
+          <span class="tag">Desktop section</span>
+        </div>
+        <div class="compare" style="--ratio: 16 / 10;">
+          <img class="compare__after" src="assets/before-after/art-sample-after.png" alt="After mockup for the sample report section">
+          <img class="compare__before" src="assets/before-after/art-sample-before.png" alt="Before screenshot of the sample report section">
+          <span class="compare__label before">Before</span>
+          <span class="compare__label after">After</span>
+          <span class="compare__handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after sample report section">
+        </div>
+        <div class="notes">
+          <div class="note"><strong>What changed</strong><span>More explicit report preview, tighter evidence hierarchy, clearer CTA path.</span></div>
+          <div class="note"><strong>Why it helps</strong><span>Visitors can see what they receive before committing to the order flow.</span></div>
+          <div class="note"><strong>Implementation scope</strong><span>Mostly layout, spacing, proof module, and CTA treatment.</span></div>
+        </div>
+      </article>
+
+      <article class="example">
+        <div class="example__header">
+          <div>
+            <h2>Screener result page</h2>
+            <p>A result-page pass focused on turning a dense answer into a cleaner decision screen with stronger next-step confidence.</p>
+          </div>
+          <span class="tag">Result UX</span>
+        </div>
+        <div class="compare" style="--ratio: 16 / 10;">
+          <img class="compare__after" src="assets/before-after/screener-result-after.png" alt="After mockup for a screener result page">
+          <img class="compare__before" src="assets/before-after/screener-result-before.png" alt="Before screenshot of a screener result page">
+          <span class="compare__label before">Before</span>
+          <span class="compare__label after">After</span>
+          <span class="compare__handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after screener result page">
+        </div>
+        <div class="notes">
+          <div class="note"><strong>What changed</strong><span>Cleaner result summary, stronger evidence grouping, clearer upgrade action.</span></div>
+          <div class="note"><strong>Why it helps</strong><span>The visitor can understand the answer and the paid next step in one scan.</span></div>
+          <div class="note"><strong>Implementation scope</strong><span>Information hierarchy, cards, sticky action, and summary copy structure.</span></div>
+        </div>
+      </article>
+
+      <article class="example">
+        <div class="example__header">
+          <div>
+            <h2>Mobile section pass</h2>
+            <p>A mobile-specific pass that compresses the same proof idea into a tighter, more thumb-friendly layout.</p>
+          </div>
+          <span class="tag">Mobile</span>
+        </div>
+        <div class="compare mobile" style="--ratio: 390 / 844;">
+          <img class="compare__after" src="assets/before-after/mobile-section-after.png" alt="After mobile mockup for a section-level pass">
+          <img class="compare__before" src="assets/before-after/mobile-section-before.png" alt="Before mobile screenshot for a section-level pass">
+          <span class="compare__label before">Before</span>
+          <span class="compare__label after">After</span>
+          <span class="compare__handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after mobile section">
+        </div>
+        <div class="notes">
+          <div class="note"><strong>What changed</strong><span>More compact proof path with better top-of-screen prioritization.</span></div>
+          <div class="note"><strong>Why it helps</strong><span>Small screens need fewer competing blocks and a more obvious continuation.</span></div>
+          <div class="note"><strong>Implementation scope</strong><span>Mobile stacking, spacing, image treatment, and sticky CTA behavior.</span></div>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      This page is a static demo for the public Design Mockup Loop skill. The after images are mockup directions, not deployed production screens.
+    </footer>
+  </main>
+
+  <script>
+    for (const input of document.querySelectorAll('.compare input[type="range"]')) {
+      const compare = input.closest('.compare');
+      const update = () => compare.style.setProperty('--pos', `${input.value}%`);
+      input.addEventListener('input', update);
+      update();
+    }
+  </script>
+</body>
+</html>
