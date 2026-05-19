@@ -22,6 +22,8 @@ Use it when you want design direction before touching production code.
 Useful for paid or SEO landing pages where the hero, trust proof, and CTA path
 need to feel clearer.
 
+<img src="assets/use-cases/landing-page-redesign.png" alt="Antiques landing page screenshot for a landing page redesign use case" width="720">
+
 ```text
 $design-mockup-loop create desktop and mobile mockups for https://appraisily.com/antiques.
 Focus on the hero, proof strip, service explanation, and primary start CTA.
@@ -32,6 +34,8 @@ Keep the page credible for antique owners who need an online appraisal.
 
 Useful when one section is weak but the rest of the page is mostly fine, such as
 a sample-report block, process section, comparison table, or pricing/order band.
+
+<img src="assets/use-cases/section-level-improvement.png" alt="Art page section screenshot for a section-level improvement use case" width="720">
 
 ```text
 $design-mockup-loop mock up only the sample report showcase section on this page:
@@ -45,6 +49,8 @@ that make the sample reports feel more inspectable and trustworthy.
 Useful for improving forms, upload steps, pricing choices, sticky CTAs, and
 decision-heavy product flows.
 
+<img src="assets/use-cases/funnel-step-mobile.png" alt="Mobile start funnel screenshot for a checkout UX use case" width="360">
+
 ```text
 $design-mockup-loop create mockups for https://appraisily.com/start.
 Focus on the first upload/selection screen, checkout readiness, mobile sticky
@@ -55,6 +61,8 @@ CTA behavior, and reducing visual friction before payment.
 
 Useful for free-tool result pages, report previews, dashboards, or any screen
 where the next action needs to be more obvious.
+
+<img src="assets/use-cases/result-page-upgrade.png" alt="Report result page screenshot for an upgrade CTA use case" width="720">
 
 ```text
 $design-mockup-loop create desktop and mobile mockups for this result page URL.
@@ -67,6 +75,8 @@ to show evidence without making the page feel dense.
 Useful for old static prototypes, generated proposals, or one-off HTML pages
 already hosted on a public asset server.
 
+<img src="assets/use-cases/static-prototype-review.png" alt="Static HTML prototype screenshot for an existing prototype review use case" width="720">
+
 ```text
 $design-mockup-loop improve this existing HTML concept:
 https://your-assets-domain.com/design-proposals/example-run/index.html
@@ -78,6 +88,8 @@ more implementable desktop and mobile direction.
 
 Useful for long-form content where readers need a clearer next step without
 turning the article into a heavy landing page.
+
+<img src="assets/use-cases/article-cta-blocks.png" alt="Article page screenshot for a content CTA block use case" width="720">
 
 ```text
 $design-mockup-loop create mockups for the CTA and next-step blocks on this
