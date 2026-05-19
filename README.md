@@ -1,5 +1,7 @@
 # Design Mockup Loop Skill
 
+![Design Mockup Loop: browser screenshots to AI mockups to review page](assets/design-mockup-loop-hero.png)
+
 Portable Codex skill for turning live page screenshots into AI-generated desktop
 and mobile GUI mockups.
 
