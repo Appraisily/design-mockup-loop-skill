@@ -1,0 +1,5 @@
+interface:
+  display_name: "Design Mockup Loop"
+  short_description: "Turn browser screenshots into UI mockups"
+  default_prompt: "Use $design-mockup-loop to capture page screenshots and create desktop and mobile design-improvement mockups."
+
