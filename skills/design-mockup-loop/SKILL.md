@@ -21,6 +21,12 @@ then iterate twice for desktop and twice for mobile.
 If either tool is unavailable, continue with the nearest available fallback and
 state the fallback.
 
+This skill does not install dependencies. If `agent-browser` is missing, tell
+the user to install it on the host with `npm install -g agent-browser` followed
+by `agent-browser install`; on Linux, use `agent-browser install --with-deps`.
+Image generation must come from the Codex environment, such as `$imagegen`, or
+from another configured image model/tool.
+
 ## Working Assumption
 
 Before non-trivial work, state:
@@ -223,4 +229,3 @@ Use this scale to judge each mockup:
 
 Prefer a 4 that can be implemented over a 5-looking concept that depends on
 false claims, impossible assets, or fragile layout.
-
